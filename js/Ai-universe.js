@@ -1,4 +1,5 @@
 const loadAiCard = async (seeMore) => {
+    toggleLoadingSpinner(true);
     const res = await fetch(`https://openapi.programming-hero.com/api/ai/tools`);
     const data = await res.json();
     const tools = data.data.tools;
@@ -8,6 +9,14 @@ const loadAiCard = async (seeMore) => {
 const displayAiCard = (tools, seeMore) => {
     const aiCardContainer = document.getElementById('ai-Card-Container');
     aiCardContainer.innerHTML = '';
+
+    const seeMoreContainer = document.getElementById('see-more-container');
+    if (tools.length > 5 && !seeMore) {
+        seeMoreContainer.classList.remove('hidden')
+    }
+    else {
+        seeMoreContainer.classList.add('hidden')
+    }
 
 
     if (!seeMore) {
@@ -40,6 +49,7 @@ const displayAiCard = (tools, seeMore) => {
         aiCardContainer.appendChild(aiCard);
 
     })
+    toggleLoadingSpinner(false);
 }
 
 const handelShowDetails = async (id) => {
@@ -112,6 +122,16 @@ const seeMore = () => {
     loadAiCard(true)
 }
 
+
+const toggleLoadingSpinner = (isLoading) => {
+    const loadingSpinner = document.getElementById('loading-container');
+    if (isLoading) {
+        loadingSpinner.classList.remove('hidden')
+    }
+    else {
+        loadingSpinner.classList.add('hidden')
+    }
+}
 
 
 loadAiCard()

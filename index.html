@@ -42,12 +42,15 @@
     </header>
     <main class="container mx-auto mt-16">
         <section>
+            <div id="loading-container" class="hidden text-center text-blue-500">
+                <span class="loading loading-dots loading-lg"></span>
+            </div>
             <!-- display ai card section  -->
             <div id="ai-Card-Container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
 
             </div>
 
-            <div id="see-more-container" onclick="seeMore()" class="text-center ">
+            <div id="see-more-container" onclick="seeMore()" class="text-center hidden">
                 <button class="btn bg-violet-900 hover:bg-violet-700 font-sans text-fuchsia-200 border-none my-10">See
                     More</button>
             </div>
@@ -76,6 +79,7 @@
                     </div>
                 </div>
             </dialog>
+
         </section>
         <!-- java script file link  -->
         <script src="js/Ai-universe.js"></script>
