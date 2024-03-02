@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Universe Hub</title>
+
+    <!-- tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font-awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="bg-slate-400">
+    <header class="text-center">
+        <!-- <h1 class="text-7xl ">AI Universe Hub</h1>
+        <button class="btn btn-active btn-secondary my-10">Secondary</button> -->
+
+        <div class="hero " style="background-image: url(img/header-img.jpg);">
+            <div class="hero-overlay bg-opacity-40"></div>
+            <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-md md:py-32">
+                    <h1 class="mb-5 text-5xl font-bold text-purple-100	font-serif"><img class="w-60 grid mx-auto"
+                            src="img/ai-logoi.png" alt="">
+                        Universe Hub
+                    </h1>
+                    <p class="mb-5 text-violet-100	">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+                        excepturi
+                        exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <button
+                        class="btn btn-active border-none bg-violet-900 hover:bg-violet-700 font-sans text-fuchsia-200  my-10">Sort
+                        By
+                        Date</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto mt-16">
+        <section>
+            <!-- display ai card section  -->
+            <div id="ai-Card-Container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
+
+            </div>
+
+            <div id="see-more-container" onclick="seeMore()" class="text-center ">
+                <button class="btn bg-violet-900 hover:bg-violet-700 font-sans text-fuchsia-200 border-none my-10">See
+                    More</button>
+            </div>
+        </section>
+        <!-- Show details modal-->
+        <section>
+            <!-- You can open the modal using ID.showModal() method -->
+            <dialog id="ai_display_modal" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 md:p-16" id="display-details-container">
+
+                        <div id="details-container1" class="card bg-gray-100 shadow-xl p-10">
+
+                        </div>
+
+                        <div id="details-container2" class="card bg-red-100 shadow-xl p-10">
+
+                        </div>
+
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+        <!-- java script file link  -->
+        <script src="js/Ai-universe.js"></script>
+    </main>
+</body>
+
+</html>
