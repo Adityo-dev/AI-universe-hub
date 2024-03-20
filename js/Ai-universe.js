@@ -53,7 +53,7 @@ const displayAiCard = (tools, seeMore) => {
 }
 
 const handelShowDetails = async (id) => {
-    console.log('click', id);
+    // console.log('click', id);
     const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
     const data = await res.json();
     const singleAiDate = data.data;
@@ -61,55 +61,55 @@ const handelShowDetails = async (id) => {
 }
 
 const displayShowDetails = (singleAiDate) => {
-    console.log(singleAiDate);
     const displayDetalisContainer = document.getElementById('display-details-container');
     const detailsContainer1 = document.getElementById('details-container1');
     const detailsContainer2 = document.getElementById('details-container2');
     displayDetalisContainer.appendChild(detailsContainer1, detailsContainer2);
     detailsContainer1.innerHTML = `
-    <img class="mb-6" src="${singleAiDate.image_link[0]}" alt="">
-    <h3 class="font-bold text-lg text-stone-600 ">${singleAiDate.input_output_examples[0].input}</h3>
-    <p class="py-4">${singleAiDate.input_output_examples[0].output}</p>
-    <h3 class="font-bold text-lg text-stone-600 ">${singleAiDate.input_output_examples[1].input}</h3>
-    <p class="py-4">${singleAiDate.input_output_examples[1].output}</p>
+    <img class="mb-6 w-[90%] mx-auto" src="${singleAiDate.image_link[0]}" alt="">
+  
+    <h3 class="font-bold text-sm md:text-lg text-stone-600 ">${singleAiDate.input_output_examples[0].input}</h3>
+    <p class="py-2 md:py-4">${singleAiDate.input_output_examples[0].output}</p>
+    <h3 class="font-bold text-sm md:text-lg text-stone-600 ">${singleAiDate.input_output_examples[1].input}</h3>
+    <p class=" py-2 md:py-4">${singleAiDate.input_output_examples[1].output}</p>
     `;
 
     detailsContainer2.innerHTML = `
-    <h3 class="font-bold text-lg text-stone-600 ">${singleAiDate.description}</h3>
-    <div class="md:flex  md:gap-4 text-center mt-12 mx-auto">
-       <div class="bg-gray-100 p-2 rounded-lg text-amber-400 font-extrabold ">
-          <p>${singleAiDate.pricing[0].price}</P>
-          <p>${singleAiDate.pricing[0].plan}</P>
+    <h3 class="font-bold text-sm md:text-lg text-stone-600 ">${singleAiDate.description}</h3>
+    <div class="flex gap-3 text-center mt-4 md:mt-12 mx-auto">
+       <div class="bg-gray-100 p-2 rounded-lg text-amber-400 font-extrabold text-[10px] md:text-[15px] ">
+          <p>${singleAiDate?.pricing[0]?.price}</P>
+          <p>${singleAiDate?.pricing[0]?.plan}</P>
        </div>
 
-       <div class="bg-gray-100 p-2 rounded-lg text-green-500 font-extrabold ">
-          <p>${singleAiDate.pricing[0].price}</P>
-          <p>${singleAiDate.pricing[0].plan}</P>
+       <div class="bg-gray-100 p-2 rounded-lg text-green-500 font-extrabold text-[10px] md:text-[15px]">
+          <p>${singleAiDate?.pricing[0]?.price}</P>
+          <p>${singleAiDate?.pricing[0]?.plan}</P>
        </div>
 
-       <div class="bg-gray-100 p-2 rounded-lg text-violet-700 font-extrabold">
-          <p>${singleAiDate.pricing[0].price}</P>
-          <p>${singleAiDate.pricing[0].plan}</P>
+       <div class="bg-gray-100 p-2 rounded-lg text-violet-700 font-extrabold text-[10px] md:text-[15px]">
+          <p>${singleAiDate?.pricing[0]?.price}</P>
+          <p>${singleAiDate?.pricing[0]?.plan}</P>
        </div>
     </div>
 
     <div class="mt-6">
 
         <div>
-           <h3 class="text-2xl text-stone-600 font-extrabold mb-2">Features</h3>
+           <h3 class=" text-base md:text-2xl text-stone-600 font-extrabold mb-2">Features</h3>
           <ul= 1 ">
-            <li>${singleAiDate.features[1].feature_name}</li>
-            <li>${singleAiDate.features[2].feature_name}</li>
-            <li>${singleAiDate.features[3].feature_name}</li>
+            <li>${singleAiDate?.features[1]?.feature_name}</li>
+            <li>${singleAiDate?.features[2]?.feature_name}</li>
+            <li>${singleAiDate?.features[3]?.feature_name}</li>
           </ul>
         </div>
 
         <div>
-           <h3 class="text-2xl text-stone-600 font-extrabold my-2">Integrations</h3>
+           <h3 class="text-base md:text-2xl text-stone-600 font-extrabold my-2">Integrations</h3>
           <ul= 1>
-            <li>${singleAiDate.integrations[0]}</li>
-            <li>${singleAiDate.integrations[1]}</li>
-            <li>${singleAiDate.integrations[2]}</li>
+            <li>${singleAiDate?.integrations[0]}</li>
+            <li>${singleAiDate?.integrations[1]}</li>
+            <li>${singleAiDate?.integrations[2]}</li>
           </ul>
         </div>
     </div>
